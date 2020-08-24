@@ -1,0 +1,108 @@
+<h3>Resultados</h3>
+
+<p>
+    Usa os Sliders para alterar os valores indicados, de forma a poderes ver
+    diferentes resultados.
+</p>
+<p>
+    Experimenta prever as consequências de uma ou mais alterações:
+</p>
+<ul>
+    <li>Uma variação na Massa irá variar a aceleração gravítica obtida?</li>
+    <li>Como irá aumentar a velocidade de passagem pela 2ª Célula com o aumento da distância entre as células?</li>
+</ul><br>
+
+<div class="centrada">
+    <div class="flex-slider">
+        <div><label for="massaEsfera">Massa da Esfera</label></div>
+        <div><span id="massaEsferaValue">200</span>g
+        <input type="range" name="massaEsfera" id="massaEsfera" class="slider" min="100" max="500" value="200"></div>
+    </div>
+    <div class="flex-slider">
+        <div><label for="raioEsfera">Raio da Esfera</label></div>
+        <div><span id="raioEsferaValue">2.0</span>cm
+        <input type="range" name="raioEsfera" id="raioEsfera" class="slider" min="15" max="50" value="20"></div>
+    </div>
+    <div class="flex-slider">
+        <div><label for="distCelulas">Distância entre as Células</label></div>
+        <div><span id="distCelulasValue">60</span>cm
+        <input type="range" name="distCelulas" id="distCelulas" class="slider" min="40" max="120" value="60"></div>
+    </div>
+    <div class="flex-slider">
+        <div>Resistência do Ar:</div>
+        <div><button id="calcularRAr" class="escolha-atual" onclick="mudarCalcularRAr(true)">Calcular (R<sub>Ar</sub> &NotEqual; 0)</button></div>
+        <div><button id="desprezarRAr" class="escolha" onclick="mudarCalcularRAr(false)">Desprezar (R<sub>Ar</sub> &equals; 0)</button></div>
+    </div><br>
+
+    <button id="fazer-curva-Esfera" class="submit" onclick="curva()">Atualizar a Tabela dos Resultados Experimentais</button>
+    <br><br><br>
+
+    <div class="overflow" style="max-width: 72vw;">
+        <table class="resultados">
+            <tr class="vars">
+                <td>&Delta;t <sub>passagem pela 2ª Célula</sub>/ ms</td>
+                <td>&Delta;t <sub>queda entre as Células</sub>/ ms</td>
+                <td>v <sub>passagem pela 2ª Célula</sub>/ <span class="nbsp">ms<sup>-1</sup></span></td>
+                <td class="fim-tabela">g/ <span class="nbsp">ms<sup>-2</sup></span></td>
+            </tr>
+            <tr>
+                <td><span id="deltaT-celula2"></span></td>
+                <td><span id="deltaT-queda"></span></td>
+                <td><span id="velocidade-celula2"></span></td>
+                <td class="fim-tabela"><span id="gravidade-experimental"></td>
+            </tr>
+        </table>
+    </div>
+    <p>Valor Tabelado para o g: 9.81 <span class="nbsp">ms<sup>-2</sup></span> </p>
+</div>
+<div class="explicar">
+    <p>
+        A Resistência do Ar foi calculada de forma aproximada usando 0.5 como o Coeficiente
+        de Resistência Aerodinâmica da Esfera.
+    </p>
+</div>
+<p>
+    <span class="anchor" onclick="mostrarExtra('gráficos-extra')">Ver Gráficos Extra - Leis x(t), v(t), a(t) e j(t)</span>
+</p>
+<div id="gráficos-extra" class="explicar" style="display: none;">
+    <button class="fechar" onclick="mostrarExtra('gráficos-extra')">X</button>
+    <ul>
+        <li><span class="anchor" onclick="mostrarExtra('gráfico-extra-xt')">Ver Gráfico x(t) - Posição-Tempo</span></li>
+        <li><span class="anchor" onclick="mostrarExtra('gráfico-extra-vt')">Ver Gráfico v(t) - Velocidade-Tempo</span></li>
+        <li><span class="anchor" onclick="mostrarExtra('gráfico-extra-at')">Ver Gráfico a(t) - Aceleração-Tempo</span></li>
+        <li><span class="anchor" onclick="mostrarExtra('gráfico-extra-jt')">Ver Gráfico j(t) - Jerk-Tempo</span></li>
+    </ul>
+    
+    <div id="gráfico-extra-xt" class="explicar" style="display: none;">
+        <button class="fechar" onclick="mostrarExtra('gráfico-extra-xt')">X</button><br><br>
+        <div class="graf-container">
+            <div id="curva-xt" class="graf">
+                <span id="canvasCurva-xt"></span>
+            </div>
+        </div>
+    </div>
+    <div id="gráfico-extra-vt" class="explicar" style="display: none;">
+        <button class="fechar" onclick="mostrarExtra('gráfico-extra-vt')">X</button><br><br>
+        <div class="graf-container">
+            <div id="curva-vt" class="graf">
+                <span id="canvasCurva-vt"></span>
+            </div>
+        </div>
+    </div>
+    <div id="gráfico-extra-at" class="explicar" style="display: none;">
+        <button class="fechar" onclick="mostrarExtra('gráfico-extra-at')">X</button><br><br>
+        <div class="graf-container">
+            <div id="curva-at" class="graf">
+                <span id="canvasCurva-at"></span>
+            </div>
+        </div>
+    </div>
+    <div id="gráfico-extra-jt" class="explicar" style="display: none;">
+        <button class="fechar" onclick="mostrarExtra('gráfico-extra-jt')">X</button><br><br>
+        <div class="graf-container">
+            <div id="curva-jt" class="graf">
+                <span id="canvasCurva-jt"></span>
+            </div>
+        </div>
+    </div>
+</div>

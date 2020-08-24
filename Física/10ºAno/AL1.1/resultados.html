@@ -1,0 +1,45 @@
+<h3>Resultados</h3>
+
+<p>
+    Usa os Sliders para alterar os valores indicados, de forma a poderes ver
+    diferentes resultados.
+</p>
+<p>
+    Experimenta prever as consequências de uma ou mais alterações:
+</p>
+<ul>
+    <li>Como irá variar a Energia Cinética Final para uma mesma distância?</li>
+    <li>Por quanto irá aumentar/ diminuir o declive da reta representada?</li>
+</ul><br>
+
+<div class="centrada">
+    <div class="flex-slider">
+        <div><label for="massaCarrinho">Massa do Carrinho</label></div>
+        <div><span id="massaCarrinhoValue">200</span>g
+        <input type="range" name="massaCarrinho" id="massaCarrinho" class="slider" min="10" max="99" value="20"></div>
+    </div>
+    <div class="flex-slider">
+        <div><label for="angPlanoInclinado">Ângulo do Plano Inclinado </label></div>
+        <div><span id="angPlanoInclinadoValue">20.0</span>º
+        <input type="range" name="angPlanoInclinado" id="angPlanoInclinado" class="slider" min="100" max="450" value="200"></div>
+    </div>
+    <div class="flex-slider">
+        <div><label for="forçaAtrito">Força de Atrito </label></div>
+        <div><span id="forçaAtritoValue">0.100</span>N
+        <input type="range" name="forçaAtrito" id="forçaAtrito" class="slider" min="0" max="184" value="100"></div>
+    </div>
+
+    <button id="fazer-curva-Ec" class="submit" onclick="curva()">Traçar a função E<sub>c</sub> = f(d)</button>
+</div><br>
+<div class="graf-container">
+    <div id="curva-Ec" class="graf">
+        <span id="canvasCurva"></span>
+    </div>
+</div>
+<div class="explicar">
+    <p>
+        A Força de Atrito máxima está limitada de acordo com a massa do Carrinho e
+        a inclinação do Plano, de forma a termos resultados mais realistas
+        (<a href="https://pt.wikipedia.org/wiki/Atrito#Atrito_din%C3%A2mico_ou_cin%C3%A9tico" target="blanck">Coeficiente de Fricção Dinâmico Máximo</a> &equals; 0.1).
+    </p>
+</div>
