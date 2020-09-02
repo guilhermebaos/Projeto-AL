@@ -1,6 +1,7 @@
 // Definir Constantes
 const nAvogrado = 6.02214076e23
 
+
 // Inicializar Variáveis Globais
 
 // Usar um Objeto para proteger as variáveis com nomes comuns
@@ -35,7 +36,7 @@ function prepararResultados() {
     massaCemGotasResp = document.getElementById('massaCemGotasValue')
     volumeCemGotasResp = document.getElementById('volumeCemGotasValue')
 
-    // Selecionar os Spans com os Valores da Tabela
+    // Selecionar os Spans com os Resultados da Tabela
     massaGotaResp = document.getElementById('massaGotaValue')
     volumeGotaResp = document.getElementById('volumeGotaValue')
     nGotaResp = document.getElementById('nGotaValue')
@@ -60,6 +61,7 @@ function prepararResultados() {
     curva()
 }
 
+
 // Modificar o Volume para que densidade pertença a [0.98, 1.00]
 function corrigirVolumeCemGotas() {
     let densidade = massaCemGotas.value / volumeCemGotas.value
@@ -76,6 +78,7 @@ function corrigirVolumeCemGotas() {
         volumeCemGotasResp.innerHTML = `${volumeCemGotasValue.toFixed(2)}`
     }
 }
+
 
 // Modificar a Massa para que densidade pertença a [0.98, 1.00]
 function corrigirMassaCemGotas() {
@@ -95,17 +98,17 @@ function corrigirMassaCemGotas() {
 }
 
 
-// Calcular as características de uma gota de água
+// Calcula as características de uma gota de água e mostra na Tabela
 function curva() {
     let massa = massaCemGotas.value / 10
     let volume = volumeCemGotas.value / 10
     let N = (massa * 1e-3 / 18.02) * nAvogrado
 
     let nTexto = String(N.toExponential(5))
-    nTexto = nTexto.slice(0, 5) + ' &times 10<sup>' + nTexto.slice(nTexto.length - 2) + '</sup>'
+    nTexto = nTexto.slice(0, 4) + ' &times 10<sup>' + nTexto.slice(nTexto.length - 2) + '</sup>'
 
-    massaGotaResp.innerHTML = `${massa.toFixed(2)}`
-    volumeGotaResp.innerHTML = `${volume.toFixed(2)}`
+    massaGotaResp.innerHTML = `${massa.toFixed(1)}`
+    volumeGotaResp.innerHTML = `${volume.toFixed(1)}`
     nGotaResp.innerHTML = `${nTexto}`
 }
 
