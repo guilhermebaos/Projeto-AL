@@ -12,17 +12,26 @@ header {
     padding-top: 5px;
 }
 
-
-main {
-    background: white;
-    margin-right: calc(10vw - (100vw - 100%) - 20px);
-    margin-left: calc(10vw - 20px);
-    padding: 10px 20px 10px 20px;
-    width: 80vw;
-    max-width: 1500px;
-    min-height: calc(100vh - 10px - 10px - 40px - 50px);
+@media not screen and (max-width: 600px) {
+    main {
+        background: white;
+        margin-right: calc(10vw - (100vw - 100%) - 20px);
+        margin-left: calc(10vw - 20px);
+        padding: 10px 20px 10px 20px;
+        width: 80vw;
+        max-width: 1500px;
+        min-height: calc(100vh - 10px - 10px - 40px - 50px);
+    }
 }
-
+@media screen and (max-width: 600px) {
+    main {
+        background: white;
+        margin: auto;
+        padding: 10px 20px 10px 20px;
+        width: 80%;
+        min-height: calc(100vh - 10px - 10px - 40px - 50px);
+    }
+}
 
 a {
     text-decoration: underline;
@@ -37,12 +46,11 @@ p {
     text-indent: 10px;
 }
 
-p.m0 {
-    margin: 0px;
-}
+
 
 p.contas {
-    line-height: 150%;
+    line-height: 180%;
+    font-size: 110%;
     text-indent: 0px;
     white-space: nowrap;
     font-family: serif;
@@ -83,17 +91,29 @@ h3.unidade {
     margin-bottom: 0px;
 }
 
+.m0 {
+    margin: 0px;
+}
 
-span.nota {
-    font-size: small;
+.nbsp {
+    white-space: nowrap;
+}
+
+.linha-alta {
+    line-height: 130%;
+}
+
+.nota {
+    font-size: 90%;
 }
 
 span.invi {
     color: white;
 }
 
-span.nbsp {
-    white-space: nowrap;
+span.serif {
+    font-family: serif;
+    font-size: 110%;
 }
 
 span.anchor {
@@ -110,6 +130,9 @@ span.contas {
     font-family: serif;
 }
 
+sup {
+    line-height: 0;
+}
 
 sup.exp-contas {
     text-decoration: none;
@@ -129,6 +152,10 @@ sup sup {
     font-size: 100%;
 }
 
+sub {
+    line-height: 0;
+}
+
 sub sup {
     font-size: 100%;
 }
@@ -136,11 +163,11 @@ sub sup {
 
 div {
     padding: 5px;
+    max-width: 100%;
 }
 
 div.tabela-container {
     padding: 0px;
-    max-width: 72vw;
 }
 
 div.graf-container {
@@ -194,6 +221,9 @@ div.flex-slider div.label {
 div.flex-slider div.btn {
     min-width: 100px;
 }
+.margin-auto {
+    margin: auto;
+}
 
 div.flex {
     display: flex;
@@ -216,7 +246,7 @@ div.contas {
     padding-bottom: 0px;
 }
 div.contas p {
-    line-height: 150%;
+    line-height: 180%;
     font-size: 110%;
     text-indent: 0px;
     white-space: nowrap;
@@ -230,8 +260,19 @@ div.overflow {
     white-space: nowrap;
 }
 div.explicar {
+	display: none;
+	height: 0;
     margin: 0px;
-    padding: 12px 8px 0px 20px;
+    padding: 0px 8px 0px 20px;
+	overflow: hidden;
+	transition: height 200ms ease-in-out;
+}
+div.explicar button {
+    margin: 12px 0px 4px 0px;
+}
+div.explicar.is-visible {
+	display: block;
+	height: auto;
 }
 div.explicar p {
     text-indent: 10px;
@@ -275,6 +316,7 @@ table.explicar {
     font-size: 80%;
     font-style: italic;
     text-indent: 0px;
+    margin-top: 5px;
 }
 table.explicar tr {
     border-bottom: 1px solid lightgray;
@@ -354,7 +396,7 @@ button::-moz-focus-inner {
 button.escolha {
     font-size: 12pt;
     color: white;
-    width: fit-content;
+    width: 100%;
     margin: 2px 0px 2px 0px;
     padding: 5px 20px 5px 20px;
     background-color: rgba(50, 140, 255, 0.7);
@@ -369,7 +411,7 @@ button.escolha:hover {
 button.escolha-atual {
     font-size: 12pt;
     color: white;
-    width: fit-content;
+    width: 100%;
     margin: 2px 0px 2px 0px;
     padding: 5px 20px 5px 20px;
     background-color: rgba(50, 140, 255, 1);
@@ -485,15 +527,19 @@ img#Queda-e-Ressalto-F10-AL12 {
 
 footer {
     width: 100%;
+    max-width: 100vw;
     height: 50px;
     text-align: center;
     margin-top: 0px;
     padding: 0px;
     color: white;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     background-color: rgb(128, 128, 128);
 }
 footer p {
+    min-width: fit-content;
     margin: 0px;
     padding: 13px 0px 13px calc(100vw - 100%);
 }
