@@ -1,5 +1,15 @@
-# Projeto-AL
+# Projeto AL
 
- Site onde alunos do Secundário podem compreender e explorar as Atividades Laboratoriais de Física e Química.
- 
- Este Repositório tem como propósito ajudar na manutenção do Projeto, bem como o de permitir a qualquer um ver e sugerir alterações à forma como são feitas as simulações das várias Atividades Laboratorias.
+O Projeto AL é um site onde alunos do Secundário podem rever e praticar as Atividades Laboratoriais (ALs) de Física e Química A (10º e 11º), de Física (12º) e de Química (12º).
+
+---
+O site contem três áreas principais:
+
+## Teoria
+Aqui podem rever a matéria necessária à compreensão da AL, bem como as fórmulas que irão ser usadas e, em traços gerais, o Método Experimental
+
+## Material e Procedimento
+Nestas áreas está reuniada toda a informação necessária à execução da Atividade Laboratorial.
+
+## Resultados
+Uma Simulação dos Resultados Experimentais, permitindo aos alunos (e professores) fazer os seus próprios exercícios e previsões científicas, usando valores realistas e tendo a correção disponível.
