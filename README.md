@@ -3,6 +3,7 @@
 O Projeto AL é um site onde alunos do Secundário podem rever e praticar as Atividades Laboratoriais (ALs) de Física e Química A (10º e 11º), de Física (12º) e de Química (12º).
 
 ---
+
 O site contem três áreas principais:
 
 ## Teoria
@@ -13,3 +14,6 @@ Nestas áreas está reuniada toda a informação necessária à execução da At
 
 ## Resultados
 Uma Simulação dos Resultados Experimentais, permitindo aos alunos (e professores) fazer os seus próprios exercícios e previsões científicas, usando valores realistas e tendo a correção disponível.
+
+---
+[Resumo das Permições da Licença](https://choosealicense.com/licenses/gpl-3.0/)
