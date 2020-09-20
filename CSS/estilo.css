@@ -182,14 +182,9 @@ div.tabela-container {
 
 div.graf-container {
     padding: 0px;
-    overflow-x: auto;
+    min-width: 600px;
+    min-height: 300px;
 }
-div.graf {
-    position: relative;
-    padding: 0px;
-    width: 100%;
-}
-
 div.header {
     width: 100%;
     top: 0px;
@@ -253,10 +248,11 @@ div.contas {
 }
 div.contas p {
     line-height: 180%;
+    font-family: serif;
     font-size: 110%;
     text-indent: 0px;
     white-space: nowrap;
-    font-family: serif;
+    margin-top: 5px;
 }
 
 div.overflow {
@@ -321,7 +317,7 @@ table.explicar tr {
     border-bottom: 1px solid lightgray;
 }
 table.explicar tr td {
-    padding: 0px 2px 0px 2px;
+    padding: 1px 4px 0px 2px;
 }
 table.explicar tr td:first-child {
     font-family: serif;

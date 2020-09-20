@@ -5,12 +5,18 @@
     diferentes resultados.
 </p>
 <p>
-    Experimenta prever as consequências de uma ou mais alterações:
+    <span class="anchor" onclick="mostrarExtra('Sugestões-de-Exercícios')">Sugestões de Exercícios</span>
 </p>
-<ul>
-    <li>Qual passará a ser o Reagente Limitante?</li>
-    <li>O Rendimento irá aumentar, diminuir ou manter-se constante?</li>
-</ul><br>
+<div id="Sugestões-de-Exercícios" class="explicar" style="display: none;">
+    <button class="fechar" onclick="mostrarExtra('Sugestões-de-Exercícios')">X</button>
+    <p>
+        Após alterar os valores, mas antes de ver a Tabela dos Resultados.
+    </p>
+    <ul>
+        <li>Determina o Reagente Limitante.</li>
+        <li>Calcula o Rendimento.</li>
+    </ul><br>
+</div>
 <div class="centrada">
     <div class="flex-slider">
         <div><label for="massaReagente1">Massa Ácido Salicílico: </label></div>
@@ -48,19 +54,20 @@
             <tr>
                 <td><span id="nC7H6O3Value">0.01448</span></td>
                 <td><span id="nC4H6O3Value">0.05289</span></td>
-                <td><span id="nC9H8O4Value">	0.01110</span></td>
+                <td><span id="nC9H8O4Value">0.01110</span></td>
             </tr>
         </table>
     </div>
 </div><br><br>
-<div class="explicar">
+<div class="nota">
     <p>
         O Rendimento máximo é de 99%.
-    </p><br>
+    </p>
     <p>
         Para que o Rendimento calculado seja mais exato, ao realizar a AL, é
-        necessário que o Reagente Limitante seja o Ácido Salicílico. Se este
-        estiver em excesso, ao fazer a filtração, poderá ficar no papel de filtro
-        juntamente com o Ácido Acetilsalicílico.
+        necessário que o Reagente Limitante seja o Ácido Salicílico. Pois, se
+        estiver em Excesso, ao fazer a filtração poderá ficar no papel de filtro
+        juntamente com o Ácido Acetilsalicílico, visto que este ácido também se
+        encontra no estado sólido.
     </p>
 </div>

@@ -5,12 +5,25 @@
     diferentes resultados.
 </p>
 <p>
-    Experimenta prever as consequências de uma ou mais alterações:
+    <span class="anchor" onclick="mostrarExtra('Sugestões-de-Exercícios')">Sugestões de Exercícios</span>
 </p>
-<ul>
-    <li>Qual foi o módulo da velocidade máxima atingida pelo Carrinho?</li>
-    <li>Qual será o Módulo da Aceleração do Carrinho enquanto o Peso está a cair?</li>
-</ul><br>
+<div id="Sugestões-de-Exercícios" class="explicar" style="display: none;">
+    <button class="fechar" onclick="mostrarExtra('Sugestões-de-Exercícios')">X</button>
+    <p>
+        Após alterar os valores, mas antes de ver o Gráfico:
+    </p>
+    <ul>
+        <li>
+            Calcula a aceleração adquirida pelo Carrinho.
+        </li>
+        <li>
+            Calcula o instante no qual o Corpo suspenso atinge o solo.
+        </li>
+        <li>
+            Calcula o módulo da velocidade máxima atingida pelo carrinho.
+        </li>
+    </ul><br>
+</div>
 
 <div class="centrada">
     <div class="flex-slider">
@@ -37,9 +50,13 @@
     <button id="fazer-curva-Velocidade-Tempo" class="submit" onclick="curva()">Traçar o Gráfico Velocidade-Tempo</button>
     <br>
 </div>
-<div class="graf-container">
-    <div id="curva-vt" class="graf"></div>
+
+<div class="overflow">
+    <div class="graf-container">
+        <div id="curva-vt"></div>
+    </div>
 </div>
+
 <div class="centrada">
     <div class="overflow" style="max-width: 72vw;">
         <table class="resultados">
@@ -55,8 +72,8 @@
             </tr>
         </table>
     </div>
-</div><br><br><br>
-<div class="explicar">
+</div><br><br>
+<div class="nota">
     <p class="m0">
         A Resultante das Forças de Atrito está limitada de modo a que haja
         Movimento, isto é, o Peso do Corpo Suspenso é muito superior, em módulo,
