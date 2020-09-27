@@ -1,0 +1,81 @@
+<h3>Resultados</h3>
+
+<p>
+    Usa os Sliders para alterar os valores indicados, de forma a poderes ver
+    diferentes resultados.
+</p>
+<p>
+    <span class="anchor" onclick="mostrarExtra('Sugestões-de-Exercícios')">Sugestões de Exercícios</span>
+</p>
+<div id="Sugestões-de-Exercícios" class="explicar" style="display: none;">
+
+    <button class="fechar" onclick="mostrarExtra('Sugestões-de-Exercícios')">X</button>
+    <p>
+        Antes alterar os valores:
+    </p>
+    <ul>
+        <li>
+            Prever se um aumento nos VOLTS/ DIV vai aumentar ou dimiuir a 
+            ordenada (altura) dos picos.
+        </li>
+        <li>
+            Prever se uma dimiuição nos SEGUNDOS/ DIV vai aumentar ou dimiuir
+            o número de picos que aparecem no ecrã.
+        </li>
+        <li>
+            Prever se um aumento na frequência vai aumentar ou diminuir o número
+            de oscilações que aparecem no ecrã.
+        </li>
+    </ul><br>
+    <p>
+        Após alterar os valores:
+    </p>
+    <ul>
+        <li>
+            Determinar o Período do Sinal a partir do Ecrã do Osciloscópio e
+            calcula a sua Frequência, comparando com o valor selecionado.
+        </li>
+        <li>
+            Verifica que consegues ouvir Sons com frequências de 10Hz a 10kHz.
+        </li>
+    </ul><br>
+</div>
+
+<div class="centrada">
+    <p>Definições do <u>Osciloscópio:</u></p>
+    <div class="flex-slider">
+        <div><label for="voltsDiv">VOLTS/ DIV</label></div>
+        <div><span id="voltsDivValue">1V</span><br>
+        <input type="range" name="voltsDiv" id="voltsDiv" class="slider" min="1" max="6" value="4"></div>
+    </div>
+    <div class="flex-slider">
+        <div><label for="segundosDiv">SEGUNDOS/ DIV</label></div>
+        <div><span id="segundosDivValue">500&micro;s</span><br>
+        <input type="range" name="segundosDiv" id="segundosDiv" class="slider" min="1" max="6" value="4"></div>
+    </div><br><br>
+    <p>Definições do <u>Gerador de Sinais</u>:</p>
+    <div class="flex-slider">
+        <div><label for="freqSinal">Frequência do Sinal</label></div>
+        <div><span id="freqSinalValue">1000</span>Hz<br>
+        <input type="range" name="freqSinal" id="freqSinal" class="slider" min="10" max="10000" value="1000"></div>
+    </div>
+    <div class="flex-slider">
+        <div><label for="amplitudeSinal">Amplitude do Sinal</label></div>
+        <div><span id="amplitudeSinalValue">1.000</span>V<br>
+        <input type="range" name="amplitudeSinal" id="amplitudeSinal" class="slider" min="50" max="4000" value="1000"></div>
+    </div>
+</div><br><br>
+<p>
+    Ecrã do Osciloscópio:
+</p>
+<div class="graf-overflow">
+    <div class="graf-container">
+        <div id="curva-oscilos" style="border-radius: 5px; background-size: 100% 100%; background-image: url('Imagens/Osci-background.png'); padding: 0px;"></div>
+    </div>
+</div><br><br>
+<p class="m0">
+    Podemos também ouvir o Som correspondente ao Sinal elétrico produzido pelo
+    Gerador de Sinais:
+</p>
+<button id="ouvir-Som" class="submit" onclick="tocarSom()">Ouvir o Som</button>
+<br><br>
