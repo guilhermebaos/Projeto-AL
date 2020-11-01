@@ -116,6 +116,9 @@ hr.frac {
 .minw-140 {
     min-width: 140px !important;
 }
+.minw-260 {
+    min-width: 260px !important;
+}
 
 
 .margin-auto {
@@ -129,10 +132,16 @@ hr.frac {
 .m5-top {
     margin: 5px 0px 0px 0px;
 }
+.m5-bot {
+    margin: 0px 0px 5px 0px;
+}
 
 
 .p0 {
     padding: 0px;
+}
+.p-sub {
+    padding-bottom: 2px !important;
 }
 
 
@@ -162,10 +171,12 @@ hr.frac {
 .serif {
     font-family: serif;
     font-size: 110%;
+    white-space: nowrap;
 }
 .serif100 {
     font-family: serif;
     font-size: 95%;
+    white-space: nowrap;
 }
 
 
@@ -354,7 +365,7 @@ div.explicar {
     margin: 0px;
     padding: 0px 8px 0px 20px;
 	overflow: hidden;
-	transition: height 200ms ease-in-out;
+	transition: height 350ms ease;
 }
 div.explicar button {
     margin: 12px 0px 4px 0px;
@@ -568,9 +579,10 @@ button#para-o-topo {
     display: none;
     position: fixed;
     font-size: 20px;
+    font-weight: bold;
     color: white;
     height: fit-content;
-    padding: 14px;
+    padding: 8px 15px 8px 15px;
     right: 20px;
     bottom: 20px;
     z-index: 10;

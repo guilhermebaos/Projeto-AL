@@ -17,7 +17,26 @@ if (screen && screen.width < 600) {
 
     // Voltar para o Topo
     function paraOTopo() {
-        document.documentElement.scrollTop = 0
-        document.body.scrollTop = 0
+        // Safari (o html smooth-scroll não funciona)
+        if (document.body.scrollTop) {
+            let docTopo = document.body.scrollTop
+            let docStep = docTopo / 100
+            let animTem = 0
+            let tempo = 300
+
+            function scrollStep(goTo) {
+                document.body.scrollTop = goTo
+            }
+
+            let c = 1
+            while (animTem <= tempo) {
+                window.setTimeout(scrollStep, animTem, docTopo - docStep * c)
+                c += 1
+                animTem += tempo / 100
+            }
+        // Chrome, IE, Opera, etc.
+        } else {
+            document.documentElement.scrollTop = 0
+        }
     }
 }
