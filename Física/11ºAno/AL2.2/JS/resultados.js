@@ -6,7 +6,8 @@
 // Usar um Objeto para proteger as variáveis com nomes comuns
 let F11_AL22 = {
     preparado: false,
-    divCurva: ''
+    divCurva: '',
+    processandoAnim: false
 }
 
 let voltsDiv
@@ -64,7 +65,7 @@ function prepararResultados() {
     // Selecionar a div que vai ter a Curva
     F11_AL22.divCurva = document.getElementById('curva-oscilos')
 
-    // Selecionar os Butões que permitem escolehr o Procedimento
+    // Selecionar os Butões que permitem escolher o Procedimento
     procedimento1 = document.getElementById('Procedimento1')
     procedimento2 = document.getElementById('Procedimento2')
 
@@ -196,8 +197,15 @@ function procedimento(num) {
         procedimento2.className = 'escolha'
 
         if (procedimentoEscolhido != 1) {
+            if (F11_AL22.processandoAnim) return
+            F11_AL22.processandoAnim = true
+
             procedimentoEscolhido = 1
-            mostrarExtra('Procedimento1-Div'); mostrarExtra('Procedimento2-Div')
+            mostrarExtra('Procedimento2-Div');
+            window.setTimeout(mostrarExtra, mostrarExtraTempo, 'Procedimento1-Div')
+            window.setTimeout(function() {
+                F11_AL22.processandoAnim = false
+            }, mostrarExtraTempo * 2)
             limparOsci()
         }
     } else {
@@ -205,8 +213,15 @@ function procedimento(num) {
         procedimento1.className = 'escolha'
 
         if (procedimentoEscolhido != 2) {
+            if (F11_AL22.processandoAnim) return
+            F11_AL22.processandoAnim = true
+            
             procedimentoEscolhido = 2
-            mostrarExtra('Procedimento1-Div'); mostrarExtra('Procedimento2-Div')
+            mostrarExtra('Procedimento1-Div');
+            window.setTimeout(mostrarExtra, mostrarExtraTempo, 'Procedimento2-Div')
+            window.setTimeout(function() {
+                F11_AL22.processandoAnim = false
+            }, mostrarExtraTempo * 2)
             curva()
         }
     }
