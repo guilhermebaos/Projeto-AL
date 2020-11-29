@@ -1,30 +1,32 @@
-<h3>Resultados</h3>
-
+<h2 class="topico">Resultados</h2>
 <p>
-    Usa os Sliders para alterar os valores indicados, de forma a poderes ver
-    diferentes resultados.
+    Usa os Sliders para alterar os valores indicados, de forma a poderes ver diferentes resultados.
 </p>
-<p>
+<p class="m0">
     <span class="anchor" onclick="mostrarExtra('Sugestões-de-Exercícios')">Sugestões de Exercícios</span>
 </p>
 <div id="Sugestões-de-Exercícios" class="explicar" style="display: none;">
     <button class="fechar" onclick="mostrarExtra('Sugestões-de-Exercícios')">X</button>
-    <p>
+    <p class="m5-bot">
         Após alterares os valores, mas antes de veres o gráfico:
     </p>
-    <ul>
+    <ul class="m0 m30-bot">
         <li>Prevê se a altura do 1º Ressalto irá aumentar ou diminuir.</li>
-        <li>A percentagem da Energia Mecânica dissipada em cada Ressalto será maior ou menor?</li>
-    </ul><br>
-    <p>
+        <li>
+            A percentagem da Energia Mecânica dissipada em cada Ressalto será maior ou menor, comparado com antes de alterares os valores?
+        </li>
+    </ul>
+    <p class="m5-bot">
         Após veres o gráfico e a Tabela com as alturas de Queda e Ressalto:
     </p>
-    <ul>
-        <li>Que percentagem da Energia Mecânica é dissipada em cada Colisão com o Solo?</li>
-    </ul><br>
+    <ul class="m0">
+        <li>
+            Que percentagem da Energia Mecânica é dissipada em cada Colisão com o Solo?
+        </li>
+    </ul>
 </div>
 
-<div class="centrada">
+<div class="centrada m30-top">
     <div class="flex-slider">
         <div><label for="massaBola">Massa da Bola</label></div>
         <div><span id="massaBolaValue">0.800</span>kg<br>
@@ -52,17 +54,17 @@
     <div class="graf-container">
         <div id="curva-xt" class="graf"></div>
     </div>
-</div><br><br>
+</div>
 
 <div class="centrada">
-    <div class="overflow" style="max-width: 72vw;">
+    <div class="overflow" style="max-width: 72vw; margin-bottom: 50px;">
         <table id="alturasTabela" class="resultados">
             <tr class="vars">
                 <td>Altura de Queda/ cm</td>
                 <td>Altura de Ressalto/ cm</td>
             </tr>
         </table>
-    </div><br><br>
+    </div>
     <div class="overflow" style="max-width: 72vw;">
         <table class="resultados">
             <tr class="vars">
@@ -75,8 +77,8 @@
             </tr>
         </table>
     </div>
-</div><br><br>
-<div class="nota">
+</div>
+<div class="nota" style="margin-top: 40px;">
     <p>
         A 'Altura da Bola' refere-se à distância do ponto da bola mais próximo do solo
         ao solo, medida na vertical.
